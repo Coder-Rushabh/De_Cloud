@@ -1,0 +1,11 @@
+.upload:disabled,
+.upload[disabled] {
+  background-color: #999;
+  border-radius: 6px;
+  font-size: 15px;
+  color:white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin-right: 10px;
+  padding-bottom: 10px;
+}
