@@ -39,22 +39,19 @@ function UploadFile({ account, provider, contract }) {
 
     const formData = new FormData();
     formData.append("file", file);
-    
 
     if (file) {
       try {
         const fileHash = await calculateFileHash(file);
         console.log('File Hash:', fileHash);
 
-        
-
        const resFile = await axios({
           method: "post",
           url: "https://api.pinata.cloud/pinning/pinFileToIPFS",
           data: formData,
           headers: {
-            pinata_api_key: `ca5503dc4bd493403168`,
-            pinata_secret_api_key: `dda07a92e23d0802f36830cdf9ae399a56bd68fb1b5849b785a3dafcf8e9ed90`,
+            pinata_api_key: ``,
+            pinata_secret_api_key: ``,
             "Content-Type": "multipart/form-data",
           },
         });
@@ -65,10 +62,6 @@ function UploadFile({ account, provider, contract }) {
        console.log("Final Hash: ",Hash)
        contract.addHash(account, Hash);
        
-
-
-
-        
       } catch (error) {
         console.error('Error calculating file hash:', error);
       }
